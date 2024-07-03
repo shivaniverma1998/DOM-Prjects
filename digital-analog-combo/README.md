@@ -6,3 +6,5 @@ This project is perfect for those who want to combine a classic design with mode
 Tech used -HTML , CSS , JavaScript
 
 check fom here .....
+
+https://shivaniverma1998.github.io/DOM-Projects/digital-analog-combo/
