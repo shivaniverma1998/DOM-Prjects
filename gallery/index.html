@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gallery viewer</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <h2 style="text-align:center">MY WEEKEND DIARY</h2>
+    <div class="gallery-wrap">
+        <img src="https://cdn-icons-png.flaticon.com/128/5726/5726664.png" id="backBtn">\
+        <div class="gallery">
+            <div>
+                <span><img src="images/image1.jpg"></span>
+                <span><img src="images/image2.jpeg"></span>
+                <span><img src="images/image3.jpg"></span>
+            </div>
+            <div>
+                <span><img src="images/image4.jpg"></span>
+                <span><img src="images/image5.jpg"></span>
+                <span><img src="images/image6.jpg"></span>
+            </div>
+        </div>
+        <img src="https://cdn-icons-png.flaticon.com/128/3889/3889500.png" id="nextBtn">
+    </div>
+
+<script>
+    let scrollContainer = document.querySelector(".gallery");
+    let backBtn = document.getElementById("backBtn");
+    let nextBtn = document.getElementById("nextBtn");
+
+
+    scrollContainer.addEventListener("wheel", (evt) => {
+        evt.preventDefault();
+        scrollContainer.scrollLeft = evt.deltaY;
+        scrollContainer.style.scrollBehavior = "auto";
+    });
+    nextBtn.addEventListener("click", ()=>{
+        scrollContainer.style.scrollBehavior = "smooth";
+        scrollContainer.scrollLeft += 900;
+    });
+
+    backBtn.addEventListener("click", ()=>{
+        scrollContainer.style.scrollBehavior = "smooth";
+        scrollContainer.scrollLeft -= 900;
+    });
+
+</script>    
+</body>
+</html>
