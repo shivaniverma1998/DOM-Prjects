@@ -45,7 +45,7 @@ body{
 }
 .btn:hover:not([disabled]){
     background: radial-gradient(#53b6dd,#73e76f);
-    color: #222;
+    color: #fff;
 
 
 }
