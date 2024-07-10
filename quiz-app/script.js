@@ -1,7 +1,7 @@
 const questions = [
     {
         question: " Which of the following variables takes precedence over the others if the names are the same?",
-        answers:[
+        answers: [
             {text: "Global variable", correct:false},
             {text: "The local element", correct:true},
             {text: "The two of the above", correct:false},
@@ -11,7 +11,7 @@ const questions = [
 
     {
         question: "Which one of the following is the correct way for calling the JavaScript code?",
-        answers:[
+        answers: [
             {text: "Preprocessor", correct:false},
             {text: "Triggering Event", correct:false},
             {text: "RMI", correct:false},
@@ -21,7 +21,7 @@ const questions = [
 
     {
         question: "Which of the following type of a variable is volatile?",
-        answers:[
+        answers: [
             {text: "Mutable variable", correct:false},
             {text: "Dynamic variable", correct:false},
             {text: "Volatile variable", correct:false},
@@ -31,7 +31,7 @@ const questions = [
 
     {
         question: "In the JavaScript, which one of the following is not considered as an error:",
-        answers:[
+        answers: [
             {text: "Syntax error", correct:false},
             {text: "Missing of semicolons", correct:false},
             {text: "Division by zero", correct:true},
@@ -41,7 +41,7 @@ const questions = [
 
     {
         question: "Which of the following function of the String object returns the character in the string starting at the specified position via the specified number of characters?",
-        answers:[
+        answers: [
             {text: "slice()", correct:false},
             {text: "split()", correct:false},
             {text: "substr()", correct:true},
@@ -61,7 +61,7 @@ const questions = [
 ];
 
 const questionElement = document.getElementById("question");
-const answerButton = document.getElementById("answer-button");
+const answerButton = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-btn");
 
 
@@ -79,7 +79,7 @@ function showQuestion(){
 
     resetState();
     let currentQuestion = questions[currentQuestionIndex];
-    let questionNo = currentQuestionIndex +1;
+    let questionNo = currentQuestionIndex + 1;
     questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
     
 
@@ -89,7 +89,7 @@ function showQuestion(){
         button.classList.add("btn");
         answerButton.appendChild(button);
         if(answer.correct){
-            button.dataset.correct= answer.correct;
+            button.dataset.correct = answer.correct;
         }
         button.addEventListener("click",selectAnswer);
     });
@@ -104,25 +104,22 @@ function resetState(){
         answerButton.removeChild(answerButton.firstChild);
     }
 }
-function selectAnswer(e){
-    const selectedBtn = e.target;
-    const isCorrect = selectedBtn.dataset.correct === "true";
-    if(isCorrect){
-        selectedBtn.classList.add("correct");
-        score++;
+
+
+
+function handleNextButton(){
+    currentQuestionIndex++;
+    if(currentQuestionIndex < questions.length){
+        showQuestion();
     }else{
-        selectedBtn.classList.add("incorrect");
+        showScore();
     }
-    Array.from(answerButton.children).forEach(button => {
-        if(button.dataset.correct === "true"){
-            button.classList.add("correct");
-        }
-        button.disabled = true;
-    });
-    nextButton.style.display = "block";
 }
 
 nextButton.addEventListener("click", () => {
-    if(currentQuestionIndex < )
-})
-startQuiz();
+    if(currentQuestionIndex < questions.length){
+        handleNextButton();
+    }else{
+        startQuiz();
+    }
+});
