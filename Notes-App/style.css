@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(45deg ,#A770EF, #CF8BF3, #FDB99B);
+    color: #fff;
+    padding-top: 4%;
+    padding-left: 10%;
+}
+.container h1{
+    display: flex;
+    align-items: center;
+    font-size: 35px;
+    font-weight: 600;
+}
+.container h1 img{
+    width: 60px;
+}
+.notes-container h2 img{
+        width: 35px;
+        margin-top: 25px;
+}
+.container button img{
+    width: 25px;
+    margin-right: 8px;
+}
+.container button{
+    display: flex;
+    align-items: center;
+    background: linear-gradient(-45deg, #00c3ff,#ffff1c);
+    color: #fff;
+    font-size: 16px;
+    outline: 0;
+    border: #89253e;
+    border-radius: 40px;
+    padding: 15px 25px;
+    margin: 30px 0 20px;
+    cursor: pointer;
+}
+.input-box {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    min-height: 150px;
+    background: #fff;
+    color: #2c3e50;
+    padding: 20px;
+    margin: 20px 0;
+    outline: none;
+    border: 5px;
+
+}
+.input-box img{
+    width: 25px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+}
+.input-box .delete-icon {
+    right: 15px;
+}
+
+.input-box .pin-icon {
+    right: 50px;
+}
+
+.pinned-notes, .unpinned-notes {
+    display: flex;
+    flex-direction: column;
+
+}
+#search-bar, #filter-options {
+    width: 100%;
+    max-width: 1100px;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
